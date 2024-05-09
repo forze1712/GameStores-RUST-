@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Widgets</title>
+    <!-- Подключение файла стилей -->
+
+</head>
+<body>
+
+<script>
+    // Функция для создания блока виджета для социальной сети
+    function createSocialWidget(iconPath, network) {
+        var widget = document.createElement('div');
+        widget.classList.add('widget', network);
+
+        // Создание элемента svg
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", "60");
+        svg.setAttribute("height", "60");
+        svg.setAttribute("viewBox", "0 0 24 24");
+
+        // Создание элемента path для SVG
+        var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", iconPath);
+
+        // Добавление элемента path в элемент svg
+        svg.appendChild(path);
+
+        // Добавление элемента svg внутрь элемента div
+        widget.appendChild(svg);
+
+        // Добавление блока виджета в body документа
+        document.body.appendChild(widget);
+
+        // Добавление обработчика события для открытия соответствующей социальной сети при клике
+        widget.addEventListener('click', function() {
+            // Вместо alert(network) можно написать логику открытия социальной сети
+            alert("Открыть " + network);
+        });
+    }
+
+    // Создание блока виджета для Telegram
+    createSocialWidget("M12,2C6.36,2,2,6.13,2,11.7c0,2.91,1.19,5.44,3.14,7.17c.16.13.26.35.27.57l.05,1.78c.04.57.61.94,1.13.71l1.98-.87c.17-.06.36-.09.53-.06c.9.27,1.9.4,2.9.4c5.64,0,10-4.13,10-9.7S17.64,2,12,2m6,7.46l-2.93,4.67c-.47.73-1.47.92-2.17.37l-2.34-1.73a.6.6,0,0,0-.72,0l-3.16,2.4c-.42.33-.97-.17-.68-.63l2.93-4.67c.47-.73,1.47-.92,2.17-.4l2.34,1.76a.6.6,0,0,0,.72,0l3.16-2.4c.42-.33.97.17.68.63", "Telegram");
+
+    // Создание блока виджета для VK
+    createSocialWidget("M12,2C6.36,2,2,6.13,2,11.7c0,2.91,1.19,5.44,3.14,7.17c.16.13.26.35.27.57l.05,1.78c.04.57.61.94,1.13.71l1.98-.87c.17-.06.36-.09.53-.06c.9.27,1.9.4,2.9.4c5.64,0,10-4.13,10-9.7S17.64,2,12,2m6,7.46l-2.93,4.67c-.47.73-1.47.92-2.17.37l-2.34-1.73a.6.6,0,0,0-.72,0l-3.16,2.4c-.42.33-.97-.17-.68-.63l2.93-4.67c.47-.73,1.47-.92,2.17-.4l2.34,1.76a.6.6,0,0,0,.72,0l3.16-2.4c.42-.33.97.17.68.63", "VK");
+</script>
+
+</body>
+</html>
