@@ -1,3 +1,9 @@
+// Создание блока widget
+var widget = document.createElement('div');
+widget.textContent = 'Это виджет'; // Текст в блоке виджет
 
-    // В этой функции можно выполнять действия после загрузки скрипта, если необходимо
-    console.log('Скрипт успешно загружен и выполнен!');
+// Добавление класса для стилизации извне
+widget.classList.add('widget');
+
+// Добавление блока виджет в body документа
+document.body.appendChild(widget);
